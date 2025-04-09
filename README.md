@@ -111,6 +111,8 @@ POST /api/token/
   "password": "adminpass"
 }
 ```
+![image](https://github.com/user-attachments/assets/83f96f23-dad7-46cd-82e7-a8edd18c0b8d)
+
 
 Use returned `access` token for headers:
 ```
