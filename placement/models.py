@@ -29,6 +29,30 @@ class AdminProfile(models.Model):
     def __str__(self):
         return self.full_name
 
+class Company(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
+    password = models.CharField(max_length=128)
+    no_of_jobs = models.IntegerField()
+    min_cgpa = models.FloatField()
+    required_skills = models.TextField()
+    job_role = models.CharField(max_length=255)
+    assessment_date = models.DateField(null=True, blank=True)
+    assessment_result_date = models.DateField(null=True, blank=True)
+    interview_date = models.DateField(null=True, blank=True)
+    interview_result_date = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+class CompanyJobSelection(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    student = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)
+    is_selected = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.company.name} → {self.student.user.username}"
+
 class JobApplication(models.Model):
     student = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)
     company_name = models.CharField(max_length=255)

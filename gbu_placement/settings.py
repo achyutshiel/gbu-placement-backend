@@ -90,3 +90,15 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
 }
+
+# Email Configuration
+# For development: Use console backend to print emails to the terminal
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Uncomment the following lines for production to use SMTP backend
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-email@gmail.com'  # Replace with your email
+# EMAIL_HOST_PASSWORD = 'your-email-password'  # Replace with your email password
