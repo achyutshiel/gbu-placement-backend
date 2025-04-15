@@ -1,0 +1,6 @@
+http://127.0.0.1:8000/api/login/
+http://127.0.0.1:8000/api/register/
+http://127.0.0.1:8000/api/change-password/
+http://127.0.0.1:8000/api/apply/
+http://127.0.0.1:8000/api/mark-placed/1/
+http://127.0.0.1:8000/api/send-selection-email/
